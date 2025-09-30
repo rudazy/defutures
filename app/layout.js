@@ -5,8 +5,8 @@ import { Web3Provider } from "@/context/Web3Context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Fluent Prediction Market",
-  description: "Decentralized prediction market on Fluent Testnet",
+  title: "DeFutures - Trade Your Insights",
+  description: "Decentralized prediction markets live on Fluent Testnet. Empowering collective intelligence on the blockchain.",
 };
 
 export default function RootLayout({ children }) {
