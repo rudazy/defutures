@@ -31,6 +31,7 @@ export default function AdminPage() {
     }
 
     fetchMarkets();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isConnected, isUserAdmin, router]);
 
   const fetchMarkets = async () => {
@@ -193,7 +194,7 @@ export default function AdminPage() {
         <Navbar />
         <div className="max-w-7xl mx-auto px-4 py-20 text-center">
           <h1 className="text-3xl font-bold text-red-400 mb-4">Access Denied</h1>
-          <p className="text-gray-400">You don't have admin privileges</p>
+          <p className="text-gray-400">You do not have admin privileges</p>
         </div>
       </div>
     );
