@@ -11,10 +11,6 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('ACTIVE');
 
-  useEffect(() => {
-    fetchData();
-  }, [filter]);
-
   const fetchData = async () => {
     try {
       setLoading(true);
@@ -40,6 +36,11 @@ export default function Home() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter]);
 
   return (
     <div className="min-h-screen bg-gray-900">

@@ -25,6 +25,7 @@ export default function MarketDetail() {
         fetchUserBet();
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.id, account]);
 
   const fetchMarket = async () => {

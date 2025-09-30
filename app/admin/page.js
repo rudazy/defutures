@@ -31,7 +31,7 @@ export default function AdminPage() {
     }
 
     fetchMarkets();
-  }, [isConnected, isUserAdmin]);
+  }, [isConnected, isUserAdmin, router]);
 
   const fetchMarkets = async () => {
     try {
