@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import MarketCard from '@/components/MarketCard';
-import StatsCard from '@/components/StatsCard';
 import HeroSection from '@/components/landing/HeroSection';
+import StatsSection from '@/components/landing/StatsSection';
 
 export default function Home() {
   const [markets, setMarkets] = useState([]);
@@ -44,43 +44,14 @@ export default function Home() {
   }, [filter]);
 
   return (
-  <div className="min-h-screen bg-gray-900">
-    <Navbar />
-    
-    <HeroSection />
-    
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" id="markets">
-        {/* Stats Section */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">Platform Statistics</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <StatsCard 
-              title="Active Markets" 
-              value={stats?.activeMarkets || 0} 
-              icon="📊" 
-              color="blue"
-            />
-            <StatsCard 
-              title="Total Participants" 
-              value={stats?.totalParticipants || 0} 
-              icon="👥" 
-              color="green"
-            />
-            <StatsCard 
-              title="Total Volume" 
-              value={`${stats?.totalVolume || '0'} ETH`} 
-              icon="💰" 
-              color="purple"
-            />
-            <StatsCard 
-              title="Total Markets" 
-              value={stats?.totalMarkets || 0} 
-              icon="🎯" 
-              color="orange"
-            />
-          </div>
-        </div>
-
+    <div className="min-h-screen bg-gray-900">
+      <Navbar />
+      
+      <HeroSection />
+      
+      <StatsSection stats={stats} />
+      
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" id="markets">
         {/* Markets Section */}
         <div>
           <div className="flex justify-between items-center mb-6">
