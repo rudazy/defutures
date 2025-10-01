@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import MarketCard from '@/components/MarketCard';
 import StatsCard from '@/components/StatsCard';
+import HeroSection from '@/components/landing/HeroSection';
 
 export default function Home() {
   const [markets, setMarkets] = useState([]);
@@ -43,10 +44,12 @@ export default function Home() {
   }, [filter]);
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      <Navbar />
-      
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div className="min-h-screen bg-gray-900">
+    <Navbar />
+    
+    <HeroSection />
+    
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" id="markets">
         {/* Stats Section */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-white mb-4">Platform Statistics</h2>
