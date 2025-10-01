@@ -2,7 +2,7 @@
 
 import { useWeb3 } from '@/context/Web3Context';
 
-export default function HeroSection() {
+export default function HeroSection({ stats }) {
   const { connect, isConnected } = useWeb3();
 
   return (
@@ -41,26 +41,41 @@ export default function HeroSection() {
           
           <a href="https://x.com/DeFuturesx" target="_blank" rel="noopener noreferrer" className="border-2 border-gray-700 hover:border-purple-500 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all flex items-center gap-2">
             <span>Follow on X</span>
-            <span className="text-xl">𝕏</span>
+            <span className="text-xl">X</span>
           </a>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-1">$2.5M+</div>
-            <div className="text-sm text-gray-400">Total Volume</div>
+        {/* Real Stats with Decorative Line */}
+        <div className="mt-16 relative">
+          <div className="absolute top-0 left-0 right-0 h-px">
+            <div className="h-full bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-1">10K+</div>
-            <div className="text-sm text-gray-400">Active Traders</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-1">500+</div>
-            <div className="text-sm text-gray-400">Markets</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-1">2%</div>
-            <div className="text-sm text-gray-400">Platform Fee</div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto pt-8">
+            <div className="text-center">
+              <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">
+                {stats?.activeMarkets || 0}
+              </div>
+              <div className="text-sm text-gray-400">Active Markets</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-1">
+                {stats?.totalParticipants || 0}
+              </div>
+              <div className="text-sm text-gray-400">Total Traders</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-1">
+                {stats?.totalVolume || '0'} ETH
+              </div>
+              <div className="text-sm text-gray-400">Total Volume</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent mb-1">
+                2%
+              </div>
+              <div className="text-sm text-gray-400">Platform Fee</div>
+            </div>
           </div>
         </div>
       </div>
