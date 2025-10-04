@@ -108,3 +108,38 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
 }
+
+/* Sliding Background Animation */
+@keyframes slide-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.slide-bg {
+  animation: slide-right 20s linear infinite;
+}
+
+/* Diagonal Pattern Background */
+.pattern-bg {
+  background-image: 
+    linear-gradient(45deg, rgba(139, 92, 246, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(236, 72, 153, 0.1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(139, 92, 246, 0.1) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(236, 72, 153, 0.1) 75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+  animation: slide-pattern 20s linear infinite;
+}
+
+@keyframes slide-pattern {
+  0% {
+    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+  }
+  100% {
+    background-position: 60px 60px, 60px 90px, 90px 30px, 30px 60px;
+  }
+}
